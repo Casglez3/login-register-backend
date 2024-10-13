@@ -10,12 +10,13 @@ if (!JWT_SECRET) {
 }
 
 //Lógica para verificar el token
-export const authenticateJWT = (req: Request, res: Response, next: NextFunction) => {
+export const authenticateJWT = (req: Request, res: Response, next: NextFunction):void => {
   const token = req.header('Authorization')?.split(' ')[1]; // Leer el token de la cabecera
 
   //Si no hay token, devolvemos un 403
   if (!token) {
-    return res.status(403).json({ message: 'Token not provided' });
+    res.status(403).json({ message: 'Token not provided' });
+    return;
   }
 
   try {
@@ -23,6 +24,7 @@ export const authenticateJWT = (req: Request, res: Response, next: NextFunction)
     req.user = decoded as JwtPayload
     next();
   } catch (error) {
-    return res.status(401).json({ message: 'Invalid or expired token' });
+    res.status(401).json({ message: 'Invalid or expired token' });
+    return;
   }
 };

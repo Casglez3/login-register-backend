@@ -70,7 +70,7 @@ describe('User Registration Test', () => {
 
         expect(response.status).toBe(400); // Esperamos que el código de estado sea 400 (solicitud incorrecta)
         expect(response.body).toHaveProperty('message'); // Esperamos que la respuesta contenga un mensaje de error
-        expect(response.body.message).toBe('password must contain at least one lowercase letter, one uppercase letter, one number and one special character'); // Esperamos que el mensaje de error sea "password must contain at least one lowercase letter, one uppercase letter, one number and one special character"
+        expect(response.body.message).toBe('The password must contain at least 8 characters, a lowercase letter, an uppercase letter, a digit and a special character.'); // Esperamos que el mensaje de error sea "The password must contain at least 8 characters, a lowercase letter, an uppercase letter, a digit and a special character."
     });
 
 

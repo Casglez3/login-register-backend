@@ -25,6 +25,21 @@ UserSchema.pre<IUser>('save', async function (next) {
     next();
   });
 
+
+// Middleware para encriptar la contraseña antes de actualizar
+UserSchema.pre('findOneAndUpdate', async function (next) {
+    const update = this.getUpdate() as { password?: string };
+
+    // Verificar si se está modificando la contraseña
+    if (update.password) {
+        const salt = await bcrypt.genSalt(10);
+        update.password = await bcrypt.hash(update.password, salt);
+        this.setUpdate(update); 
+    }
+
+    next();
+});
+
   // Método para comparar la contraseña ingresada con la almacenada
 UserSchema.methods.comparePassword = async function (password: string): Promise<boolean> {
     return await bcrypt.compare(password, this.password);

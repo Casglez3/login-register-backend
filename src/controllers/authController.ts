@@ -3,7 +3,7 @@ import User, { findOneUser, createUser } from '../models/users';
 import jwt from 'jsonwebtoken';
 
 
-const passwordValidationRegex: RegExp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+const passwordValidationRegex: RegExp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 const JWT_SECRET = process.env.JWT_SECRET;
 
 if (!JWT_SECRET) {
@@ -24,7 +24,7 @@ export const register = async (req: Request, res: Response): Promise<void> => {
 
     // Validar la contraseña
     if (!passwordValidationRegex.test(password)) {
-        res.status(400).json({ message: 'password must contain at least one lowercase letter, one uppercase letter, one number and one special character' });
+        res.status(400).json({ message: 'The password must contain at least 8 characters, a lowercase letter, an uppercase letter, a digit and a special character.' });
         return;
       }
 

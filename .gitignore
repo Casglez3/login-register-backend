@@ -1,0 +1,39 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Entorno de configuración
+.env
+.env.local
+.env.*.local
+
+# Directorios de compilación
+dist/
+build/
+coverage/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de dependencias
+package-lock.json
+yarn.lock
+
+# Logs
+logs/
+*.log
+
+# Otros
+*.tgz
+*.swp
+*.swo
+*.lock
+
+# Archivos de IDE
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
