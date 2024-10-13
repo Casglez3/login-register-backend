@@ -8,6 +8,7 @@ dotenv.config();
 import mongoose from 'mongoose';
 import authRouter from './routes/authRoutes';
 import userRouter from './routes/userRoutes';
+import './types/express.definitions';
 
 // Crear la aplicación de Express
 export const app: Application = express();

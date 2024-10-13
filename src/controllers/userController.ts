@@ -1,7 +1,7 @@
 import { deleteUserById, findOneUserById, updateUserById } from "../models/users";
 import { Request, Response } from 'express';
 
-const passwordValidationRegex: RegExp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+const passwordValidationRegex: RegExp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
 //Función para encontrar un usuario por su id
 export const findUserById = async (req: Request, res: Response): Promise<void> => {
@@ -23,7 +23,7 @@ export const updateUser = async (req: Request, res: Response): Promise<void> => 
 
         // Validar la contraseña
         if (!passwordValidationRegex.test(password)) {
-            res.status(400).json({ message: 'password must contain at least one lowercase letter, one uppercase letter, one number and one special character' });
+            res.status(400).json({ message: 'The password must contain at least 8 characters, a lowercase letter, an uppercase letter, a digit and a special character.' });
             return;
         }
         
