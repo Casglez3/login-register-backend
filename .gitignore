@@ -19,7 +19,6 @@ coverage/
 Thumbs.db
 
 # Archivos de dependencias
-package-lock.json
 yarn.lock
 
 # Logs

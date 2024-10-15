@@ -61,8 +61,8 @@ export const loginUser = async (req: Request, res: Response): Promise<void> => {
     // Genera un token JWT, se indica la expiración del token en 1h
     const token = jwt.sign({ id: user._id, userName: user.userName }, JWT_SECRET, { expiresIn: "1h" });
 
-    // Devuelve el token y el usuario
-    res.json({ message: "Successful login", token, userName: user.userName });
+    // Devuelve el token, el usuario y el id del usuario
+    res.json({ message: "Successful login", token, userName: user.userName, id: user._id });
   } catch (error) {
     console.error("Error when logging in", error);
     res.status(500).json({ message: "Error when logging in"});
