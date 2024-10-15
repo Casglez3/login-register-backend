@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { deleteUser, findUserById, updateUser } from "../controllers/userController";
+import { deleteUser, findUserById, updateUser, findUserByName } from "../controllers/userController";
 import { authenticateJWT } from "../middleware/auth";
 
 const userRouter = Router();
@@ -8,13 +8,16 @@ const userRouter = Router();
 userRouter.use(authenticateJWT);
 
 //Ruta para encontrar un usuario por su id
-userRouter.get('/:id', findUserById);
+userRouter.get("/:id", findUserById);
+
+//Ruta para obtener un usuario por su nombre
+userRouter.get("/user/:userName", findUserByName);
 
 //Ruta para actualizar un usuario
-userRouter.put('/:id', updateUser);
+userRouter.put("/:id", updateUser);
 
 //Ruta para eliminar un usuario
-userRouter.delete('/:id', deleteUser);
+userRouter.delete("/:id", deleteUser);
 
 export default userRouter;
 
