@@ -17,12 +17,19 @@ Pruebas unitarias con Jest y Supertest.
 MongoDB como base de datos para persistencia de usuarios.
 
 ## Tecnologías utilizadas:
+
 **Node.js**
+
 **Express.js**
+
 **MongoDB**
+
 **Mongoose (para la modelación de datos)**
+
 **JWT** (para la autenticación y manejo de tokens)
+
 **Jest** (para pruebas)
+
 **Supertest** (para pruebas de endpoints)
 
 ## Requisitos:
@@ -75,9 +82,9 @@ La API estará disponible en http://localhost:3000 o en el puerto que hayas conf
 
 ## Rutas disponibles
 
-**Autenticación (Rutas de /api/auth)**
+**-Autenticación (Rutas de /api/auth)**
 
-Registro (POST /register): Crea una nueva cuenta de usuario.
+**Registro (POST /register):** Crea una nueva cuenta de usuario.
 
 Body (JSON):
 
@@ -95,7 +102,7 @@ Respuestas:
 
 400: Si el nombre de usuario ya existe o la contraseña no es válida.
 
-**Login (POST /login): Inicia sesión con las credenciales del usuario.**
+**Login (POST /login):** Inicia sesión con las credenciales del usuario.
 
 Body (JSON):
 
@@ -115,9 +122,9 @@ Respuestas:
 
 404: Si el usuario no existe.
 
-**Usuarios (Rutas de /api/users)**
+**-Usuarios (Rutas de /api/users)**
 
-Obtener usuario por ID (GET /:id): Devuelve la información de un usuario existente.
+**Obtener usuario por ID (GET /:id):** Devuelve la información de un usuario existente.
 
 Se necesita un token JWT en el encabezado Authorization.
 
