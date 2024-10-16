@@ -158,6 +158,16 @@ Inicio de sesión: Pruebas para validar el login con credenciales correctas e in
 
 Gestión de usuarios: Pruebas para obtener, actualizar y eliminar usuarios.
 
+## Despliegue
+
+Por oto lado, hemos desplegado la aplicación, tanto el backend con Render como el frontend con Vercel, por lo que puedes probar:
+
+**-API en producción:** https://login-register-backend-ir31.onrender.com (puede probarse con POSTMAN)
+
+**-Aplicación completa desplegada:** https://login-register-frontend-one.vercel.app/ 
+
+(Se está utilizando la capa gratuita de Render, por lo que a veces puede que el rendimiento no sea el esperado).
+
 
 ## En cuanto a la organización general de la aplicación y las decisiones tomadas podemos destacar:
 **Controladores:** Los controladores (authController.ts y userController.ts) son responsables de manejar la lógica de negocio. Cada controlador gestiona las solicitudes relacionadas con la autenticación de usuarios y la gestión de datos de usuario, separando las responsabilidades y promoviendo la claridad en el código.
