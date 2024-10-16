@@ -160,7 +160,7 @@ Gestión de usuarios: Pruebas para obtener, actualizar y eliminar usuarios.
 
 ## Despliegue
 
-Por oto lado, hemos desplegado la aplicación, tanto el backend con Render como el frontend con Vercel, por lo que puedes probar:
+Se ha desplegado la aplicación, tanto el backend con Render como el frontend con Vercel, por lo que puedes probar:
 
 **-API en producción:** https://login-register-backend-ir31.onrender.com (puede probarse con POSTMAN)
 
